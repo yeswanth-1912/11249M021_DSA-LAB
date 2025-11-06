@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-// Define the structure for a tree node
 typedef struct Node {
     int data;
     struct Node* left;
     struct Node* right;
 } Node;
-// Function to create a new node
 Node* createNode(int value) {
     Node* newNode = (Node*) malloc(sizeof(Node));
     newNode->data = value;
@@ -14,28 +12,24 @@ Node* createNode(int value) {
     newNode->right = NULL;
     return newNode;
 }
-// Inorder Traversal: Left, Root, Right
 void inorder(Node* root) {
     if (root == NULL) return;
     inorder(root->left);
     printf("%d ", root->data);
     inorder(root->right);
 }
-// Preorder Traversal: Root, Left, Right
 void preorder(Node* root) {
     if (root == NULL) return;
     printf("%d ", root->data);
     preorder(root->left);
     preorder(root->right);
 }
-// Postorder Traversal: Left, Right, Root
 void postorder(Node* root) {
     if (root == NULL) return;
     postorder(root->left);
     postorder(root->right);
     printf("%d ", root->data);
 }
-// Level-order Traversal (using a simple queue)
 #define MAX_QUEUE 100
 typedef struct {
     Node* items[MAX_QUEUE];
@@ -99,3 +93,4 @@ int main() {
     printf("\n");
     return 0;
 }
+
