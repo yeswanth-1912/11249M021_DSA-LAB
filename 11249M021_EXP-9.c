@@ -66,13 +66,7 @@ void levelOrder(Node* root) {
     }
 }
 int main() {
-    /*
-            1
-           / \
-          2   3
-         / \   \
-        4   5   6
-    */
+
     Node* root = createNode(1);
     root->left = createNode(2);
     root->right = createNode(3);
@@ -93,4 +87,5 @@ int main() {
     printf("\n");
     return 0;
 }
+
 
